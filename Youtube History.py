@@ -1,5 +1,4 @@
 import json
-import csv
 
 
 with open('watch-history.json', 'r') as f:
