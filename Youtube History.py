@@ -81,22 +81,22 @@ for keys, value in reversed(dict(sorted(videos_uniques.items(), key=lambda item:
 
 
 with open('youtube-history-channels.csv', 'w') as f:
-    f.write("\"Channel\";\"Video seen\"\n")
+    f.write("\"Channel\",\"Video seen\"\n")
     for keys, value in reversed(dict(sorted(chaines.items(), key=lambda item: item[1])).items()):
-        f.write("\"{}\";\"{}\"\n".format(keys, value))
+        f.write("\"{}\",\"{}\"\n".format(keys, value))
 
 
 with open('youtube-history-videos.csv', 'w') as f:
-    f.write("\"Videos\";\"Views\"\n")
+    f.write("\"Videos\",\"Views\"\n")
     for keys, value in reversed(dict(sorted(videos.items(), key=lambda item: item[1])).items()):
-        f.write("\"{}\";\"{}\"\n".format(
+        f.write("\"{}\",\"{}\"\n".format(
             keys.replace("Vous avez regardé ", ""), value))
 
 
 with open('youtube-history-unique-video.csv', 'w') as f:
-    f.write("\"Channel\";\"Unique video seen\"\n")
+    f.write("\"Channel\",\"Unique video seen\"\n")
     for keys, value in reversed(dict(sorted(videos_uniques.items(), key=lambda item: item[1])).items()):
-        f.write("\"{}\";\"{}\"\n".format(keys, value))
+        f.write("\"{}\",\"{}\"\n".format(keys, value))
 
 
 # print(chaines)
