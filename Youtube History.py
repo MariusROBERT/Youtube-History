@@ -48,7 +48,7 @@ compteur = 0
 
 for keys, value in reversed(dict(sorted(chaines.items(), key=lambda item: item[1])).items()):
     if compteur < afficher_top:
-        print("Chaine : {}     Vidéos vues : {}".format(keys, value))
+        print("Chaine : {:<55} Vidéos vues : {}".format(keys, value))
         compteur += 1
     else:
         break
@@ -61,7 +61,8 @@ compteur = 0
 
 for keys, value in reversed(dict(sorted(videos.items(), key=lambda item: item[1])).items()):
     if compteur < afficher_top:
-        print("Video  : {}     Nombre de vues : {}".format(keys[18:], value))
+        print("Video  : {:<55} Nombre de vues : {}".format(
+            keys[18:], value))
         compteur += 1
     else:
         break
@@ -72,7 +73,8 @@ compteur = 0
 
 for keys, value in reversed(dict(sorted(videos_uniques.items(), key=lambda item: item[1])).items()):
     if compteur < afficher_top:
-        print("Chaine : {}     Vidéos Uniques vues : {}".format(keys, value))
+        print("Chaine : {:<55} Vidéos Uniques vues : {}".format(
+            keys, value))
         compteur += 1
     else:
         break
