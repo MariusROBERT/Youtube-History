@@ -1,7 +1,7 @@
 import json
 
 
-with open('watch-history.json', 'r') as f:
+with open('watch-history.json', 'r', encoding="utf-8") as f:
     historique = json.load(f)
 
 afficher_top = 10
