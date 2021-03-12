@@ -1,7 +1,23 @@
 import json
+import os
+from tkinter.filedialog import *
 
 
-with open('watch-history.json', 'r', encoding="utf-8") as f:
+# Chemin relatif pour les fichiers
+
+fullpath = os.path.abspath(__file__)
+os.chdir(os.path.dirname(fullpath))
+
+
+# Ask Filepath to open
+filepath = askopenfilename(title="Open json history file",
+                           filetypes=[("json files",
+                                       ".json")])
+
+if filepath == "":
+    filepath = "watch-history.json"
+
+with open(filepath, 'r', encoding="utf-8") as f:
     historique = json.load(f)
 
 afficher_top = 10
